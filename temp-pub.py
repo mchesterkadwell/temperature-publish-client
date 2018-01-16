@@ -1,16 +1,9 @@
 #!/usr/bin/python3
 
-import argparse
+import sys
 import paho.mqtt.client as mqtt
 
-def parse_args():
-    """Parse one argument from command line."""
-    parser = argparse.ArgumentParser()
-    parser.add_argument("message", help="Message to publish")
-    args = parser.parse_args()
-    return args.message
-
-message = parse_args()
+message = sys.argv[1]
 
 client = mqtt.Client()
 client.connect("localhost")
