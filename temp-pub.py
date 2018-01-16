@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import context
 import paho.mqtt.client as mqtt
 
 client = mqtt.Client()
