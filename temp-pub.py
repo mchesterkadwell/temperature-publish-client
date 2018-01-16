@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 
 import sys
+
 import paho.mqtt.client as mqtt
 
-message = sys.argv[1]
+import config
 
 client = mqtt.Client()
-client.connect("localhost")
+client.connect(config.host)
 print("Publishing message to topic", "paho/test")
-client.publish("paho/test", message)
+for message in sys.stdin:
+    if not message.isspace():
+        client.publish("paho/test", message.rstrip())
