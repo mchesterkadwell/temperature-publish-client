@@ -2,3 +2,4 @@
 out
 gen
 *.DS_Store
+/config.py
