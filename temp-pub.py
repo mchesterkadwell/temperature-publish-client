@@ -22,4 +22,4 @@ for message in sys.stdin:
         thermometer_id = parsed_message['id']
         thermometer_location = THERMOMETERS[thermometer_id]
         topic = TOPIC_PREFIX + thermometer_location
-        client.publish(topic, message.rstrip())
+        client.publish(topic, message.rstrip(), retain=True)
